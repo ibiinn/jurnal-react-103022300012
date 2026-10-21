@@ -1,32 +1,18 @@
-import { useState } from "react";
-import heroImg from "./assets/hero.png";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
-import "./App.css";
+import KartuMenu from "./assets/components/KartuMenu.jsx";
+import Panel from "./assets/components/PanelHarga.jsx";
+import labelHarga from "./assets/components/LabelHarga.jsx";
 
 function App() {
-  const n = 12;
-  const jam = 9;
-  const nama = "Bintang";
   const [count, setCount] = useState(0);
 
   return (
-    <>
-      <div className="kantin">
-          <style>
-
-            
-          </style>
-          <div>
-            <h1>Kantin {nama}</h1>
-            <p>{"saldo awal kartu kantin : Rp. " + n * 1000}</p>
-            <p>{jam < 12? "Selamat Pagi" : "Selamat Siang"}</p>
-          </div>
-          <button disabled type="button" className="btnBayar">
-            bayar
-          </button>
-      </div>
-    </>
+    <panel judul="Menu hari ini">
+      <KartuMenu
+        nama="Bakso"
+        harga={10000 + n * 100}
+        kategori="Makanan"
+      ></KartuMenu>
+    </panel>
   );
 }
 
